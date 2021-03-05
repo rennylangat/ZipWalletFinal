@@ -408,7 +408,7 @@ class _WalletState extends State<Wallet> {
                             SvgPicture.asset('assets/images/receive.svg'),
                             Container(
                               child: Text(
-                                'Receive',
+                                'Swap Money',
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.w500),
                               ),
@@ -428,28 +428,32 @@ class _WalletState extends State<Wallet> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            title: Text(''),
+            label: 'Dashboard',
             icon: ImageIcon(
               AssetImage('assets/images/wallet.png'),
             ),
           ),
           BottomNavigationBarItem(
-            title: Text(''),
+            label: 'BTC',
             icon: ImageIcon(
               AssetImage('assets/images/search.png'),
             ),
           ),
           BottomNavigationBarItem(
-            title: Text(''),
+            label: 'My Offers',
             icon: ImageIcon(
               AssetImage('assets/images/label.png'),
             ),
           ),
           BottomNavigationBarItem(
-            title: Text(''),
+            label: 'Swap Money',
             icon: ImageIcon(
               AssetImage('assets/images/account.png'),
             ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Trades',
+            icon: Icon(Icons.qr_code_outlined),
           ),
         ],
         currentIndex: 0,
@@ -457,8 +461,8 @@ class _WalletState extends State<Wallet> {
         unselectedItemColor: bottomNavInActive,
         type: BottomNavigationBarType.fixed,
         backgroundColor: blueMain,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         onTap: (int) {},
       ),
     );

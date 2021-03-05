@@ -4,13 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zipwallet/shared/shared.dart';
 
 class Login extends StatefulWidget {
-  @override
-  
-
+  static const routeName = '/login';
   _LoginState createState() => _LoginState();
 }
-
-
 
 class _LoginState extends State<Login> {
   @override
@@ -26,7 +22,7 @@ class _LoginState extends State<Login> {
               gradient: LinearGradient(
                 begin: Alignment.center,
                 end: Alignment.bottomCenter,
-                colors: [lightBlueStart,lightBlueEnd],
+                colors: [lightBlueStart, lightBlueEnd],
               ),
             ),
           ),
@@ -36,10 +32,10 @@ class _LoginState extends State<Login> {
             child: Stack(
               children: <Widget>[
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height/1.10,
-                  right: MediaQuery.of(context).size.width/5,
+                  bottom: MediaQuery.of(context).size.height / 1.10,
+                  right: MediaQuery.of(context).size.width / 5,
                   child: RotationTransition(
-                    turns: AlwaysStoppedAnimation(45/360),
+                    turns: AlwaysStoppedAnimation(45 / 360),
                     child: Container(
                       width: 20,
                       height: 20,
@@ -51,10 +47,10 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height/1.4,
-                  right: MediaQuery.of(context).size.width/4.8,
+                  bottom: MediaQuery.of(context).size.height / 1.4,
+                  right: MediaQuery.of(context).size.width / 4.8,
                   child: RotationTransition(
-                    turns: AlwaysStoppedAnimation(45/100),
+                    turns: AlwaysStoppedAnimation(45 / 100),
                     child: Container(
                       width: 75,
                       height: 75,
@@ -62,14 +58,14 @@ class _LoginState extends State<Login> {
                         color: rectColorLightBlue,
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
-                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height/2.4,
-                  left: MediaQuery.of(context).size.width/1.33,
+                  bottom: MediaQuery.of(context).size.height / 2.4,
+                  left: MediaQuery.of(context).size.width / 1.33,
                   child: Container(
                     width: 150,
                     height: 150,
@@ -88,7 +84,7 @@ class _LoginState extends State<Login> {
             alignment: Alignment.topCenter,
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height/2,
+              height: MediaQuery.of(context).size.height / 2,
               margin: EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +93,7 @@ class _LoginState extends State<Login> {
                   SvgPicture.asset('assets/images/logo.svg'),
                   SizedBox(height: 25),
                   Text('Welcome', style: welcomeStyle),
-                  Text('Sign in to continue',style: welcomeStyle),
+                  Text('Sign in to continue', style: welcomeStyle),
                 ],
               ),
             ),
@@ -130,7 +126,11 @@ class _LoginState extends State<Login> {
                       ),
                       suffixIcon: Padding(
                         padding: const EdgeInsets.only(top: 18.0),
-                        child: Icon(Icons.remove_red_eye,color: Colors.white,size: 20,),
+                        child: Icon(
+                          Icons.remove_red_eye,
+                          color: Colors.white,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ),
@@ -139,8 +139,9 @@ class _LoginState extends State<Login> {
                   ),
                   Container(
                     child: RaisedButton(
-                      onPressed: (){
-                        Navigator.pushNamedAndRemoveUntil(context,'bitcoin',(Route<dynamic> route)=>false);
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(context, 'bitcoin',
+                            (Route<dynamic> route) => false);
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
@@ -156,7 +157,7 @@ class _LoginState extends State<Login> {
                           gradient: LinearGradient(
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
-                            colors: [yellowStart,yellowEnd],
+                            colors: [yellowStart, yellowEnd],
                           ),
                         ),
                         child: Center(
@@ -172,7 +173,7 @@ class _LoginState extends State<Login> {
                     height: 20,
                   ),
                   Container(
-                    child: Text('Forgot your password?',style: forgotPassword),
+                    child: Text('Forgot your password?', style: forgotPassword),
                   )
                 ],
               ),

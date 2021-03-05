@@ -19,7 +19,7 @@ class _BitcoinState extends State<Bitcoin> {
           padding: const EdgeInsets.all(18.0),
           child: SvgPicture.asset('assets/images/menu.svg'),
         ),
-        title: Text('Wallets', style: TextStyle(color: appBarItemsColor)),
+        title: Text('ZipWallet', style: TextStyle(color: appBarItemsColor)),
         actions: <Widget>[
           Container(
             child: Padding(
@@ -94,7 +94,7 @@ class _BitcoinState extends State<Bitcoin> {
                                     color: Colors.white, fontSize: 17),
                               ),
                               Text(
-                                'USD',
+                                'Ksh',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -136,7 +136,7 @@ class _BitcoinState extends State<Bitcoin> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
-                                '4.2432232 BTC',
+                                '0.2432232 BTC',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -219,7 +219,7 @@ class _BitcoinState extends State<Bitcoin> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          SvgPicture.asset('assets/images/send.svg'),
+                          //SvgPicture.asset('assets/images/send.svg'),
                           Container(
                             child: Text(
                               'Send',
@@ -249,12 +249,12 @@ class _BitcoinState extends State<Bitcoin> {
                         ],
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SvgPicture.asset('assets/images/receive.svg'),
+                          //SvgPicture.asset('assets/images/receive.svg'),
                           Container(
                             child: Text(
-                              'Receive',
+                              'Swap Money',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
@@ -263,6 +263,30 @@ class _BitcoinState extends State<Bitcoin> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  width: 200,
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5.0,
+                        spreadRadius: 1.0,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Text("Refer and Earn",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
                 ),
                 SizedBox(height: 15),
                 Container(
@@ -517,37 +541,32 @@ class _BitcoinState extends State<Bitcoin> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            title: Text(''),
+            label: 'Dashboard',
             icon: ImageIcon(
               AssetImage('assets/images/wallet.png'),
             ),
           ),
           BottomNavigationBarItem(
-            title: Text(''),
-            icon: ImageIcon(
-              AssetImage('assets/images/search.png'),
+              label: 'BTC', icon: Icon(Icons.monetization_on_outlined)),
+          BottomNavigationBarItem(
+            label: 'My Offers',
+            icon: Icon(
+              Icons.new_releases_outlined,
             ),
           ),
           BottomNavigationBarItem(
-            title: Text(''),
-            icon: ImageIcon(
-              AssetImage('assets/images/label.png'),
-            ),
-          ),
+              label: 'Swap Money',
+              icon: Icon(Icons.swap_horizontal_circle_outlined)),
           BottomNavigationBarItem(
-            title: Text(''),
-            icon: ImageIcon(
-              AssetImage('assets/images/account.png'),
-            ),
-          ),
+              icon: Icon(Icons.qr_code_outlined), label: 'Trades')
         ],
         currentIndex: 0,
         selectedItemColor: bottomNavActive,
         unselectedItemColor: bottomNavInActive,
         type: BottomNavigationBarType.fixed,
         backgroundColor: blueMain,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         onTap: (int) {},
       ),
     );
