@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:zipwallet/screens/nav_drawer.dart';
 import 'package:zipwallet/shared/app_colors.dart';
 
 class Bitcoin extends StatefulWidget {
@@ -8,17 +10,31 @@ class Bitcoin extends StatefulWidget {
 }
 
 class _BitcoinState extends State<Bitcoin> {
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: lightBlueStart,
       appBar: AppBar(
         backgroundColor: blueMain,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: SvgPicture.asset('assets/images/menu.svg'),
-        ),
+            padding: const EdgeInsets.all(18.0),
+            child: GestureDetector(
+              child: SvgPicture.asset('assets/images/menu.svg'),
+              /* 
+              To be Revisited at a later time- Navigation Drawer
+               */
+              onTap: () {
+                Fluttertoast.showToast(
+                  msg: "A toast",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.CENTER,
+                );
+              },
+            )),
         title: Text('ZipWallet', style: TextStyle(color: appBarItemsColor)),
         actions: <Widget>[
           Container(

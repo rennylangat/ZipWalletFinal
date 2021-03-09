@@ -87,7 +87,8 @@ class _WalletState extends State<Wallet> {
                           child: Transform(
                             transform: Matrix4.identity()..scale(0.7),
                             child: SvgPicture.asset(
-                                'assets/images/bitcoin-logo.svg'),
+                                'assets/images/bitcoin-logo.svg'
+                                ),
                           ),
                         ),
                       ),
@@ -373,7 +374,6 @@ class _WalletState extends State<Wallet> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            SvgPicture.asset('assets/images/send.svg'),
                             Container(
                               child: Text(
                                 'Send',
@@ -405,7 +405,6 @@ class _WalletState extends State<Wallet> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            SvgPicture.asset('assets/images/receive.svg'),
                             Container(
                               child: Text(
                                 'Swap Money',
@@ -463,7 +462,9 @@ class _WalletState extends State<Wallet> {
         backgroundColor: blueMain,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        onTap: (int) {},
+        onTap: (index) {
+          debugPrint("Selected Screen is $index");
+        },
       ),
     );
   }
