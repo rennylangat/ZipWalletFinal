@@ -424,7 +424,14 @@ class _WalletState extends State<Wallet> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+
+      
+   
+      
+      
+      
+      
+/*       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: 'Dashboard',
@@ -465,7 +472,7 @@ class _WalletState extends State<Wallet> {
         onTap: (index) {
           debugPrint("Selected Screen is $index");
         },
-      ),
+      ) ,*/
     );
   }
 }
