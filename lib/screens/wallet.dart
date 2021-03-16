@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zipwallet/shared/shared.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class Wallet extends StatefulWidget {
   static const routeName = '/wallet';
   _WalletState createState() => _WalletState();
 }
+
+int _page = 0;
+GlobalKey _globalKey = GlobalKey();
 
 class _WalletState extends State<Wallet> {
   @override
@@ -87,8 +91,7 @@ class _WalletState extends State<Wallet> {
                           child: Transform(
                             transform: Matrix4.identity()..scale(0.7),
                             child: SvgPicture.asset(
-                                'assets/images/bitcoin-logo.svg'
-                                ),
+                                'assets/images/bitcoin-logo.svg'),
                           ),
                         ),
                       ),
@@ -424,13 +427,27 @@ class _WalletState extends State<Wallet> {
           ],
         ),
       ),
+      bottomNavigationBar: CurvedNavigationBar(
+        height: 50,
+        backgroundColor: Colors.blue,
+        key: _globalKey,
+        items: <Widget>[
+          Icon(Icons.account_balance_outlined, size: 30),
+          Icon(Icons.money_off_csred_outlined, size: 30),
+          Icon(Icons.info_outline, size: 30),
+          Icon(Icons.swap_horizontal_circle_outlined, size: 30),
+          Icon(
+            Icons.qr_code,
+            size: 30,
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+      ),
 
-      
-   
-      
-      
-      
-      
 /*       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

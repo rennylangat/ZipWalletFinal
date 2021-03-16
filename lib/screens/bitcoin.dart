@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -9,13 +10,13 @@ class Bitcoin extends StatefulWidget {
   _BitcoinState createState() => _BitcoinState();
 }
 
-class _BitcoinState extends State<Bitcoin> {
-  var scaffoldKey = GlobalKey<ScaffoldState>();
+int _page = 0;
+GlobalKey _globalnavKey = GlobalKey();
 
+class _BitcoinState extends State<Bitcoin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: lightBlueStart,
       appBar: AppBar(
         backgroundColor: blueMain,
@@ -554,7 +555,27 @@ class _BitcoinState extends State<Bitcoin> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: CurvedNavigationBar(
+        key: _globalnavKey,
+        height: 50,
+        buttonBackgroundColor: Colors.white,
+        items: <Widget>[
+          Icon(Icons.account_balance_outlined, size: 30,color: ambi,),
+          Icon(Icons.money_off_csred_outlined, size: 30),
+          Icon(Icons.info_outline, size: 30),
+          Icon(Icons.swap_horizontal_circle_outlined, size: 30),
+          Icon(Icons.qr_code, size: 30),
+        ],
+        animationDuration: Duration(
+          milliseconds: 300,
+        ),
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+      ),
+/*       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: 'Dashboard',
@@ -584,7 +605,7 @@ class _BitcoinState extends State<Bitcoin> {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         onTap: (int) {},
-      ),
+      ), */
     );
   }
 }
