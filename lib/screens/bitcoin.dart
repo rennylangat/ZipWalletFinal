@@ -309,12 +309,26 @@ class _BitcoinState extends State<Bitcoin> {
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
-                    'Currency',
+                    'Your History',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                 ),
                 SizedBox(height: 15),
-                GestureDetector(
+
+                /*
+                * Code to get the transaction history from the model
+                *
+                *
+                * */
+
+
+
+
+
+
+
+
+                /*GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, 'wallet');
                   },
@@ -537,8 +551,8 @@ class _BitcoinState extends State<Bitcoin> {
                       ],
                     ),
                   ),
-                ),
-                Container(
+                ),*/
+             /*   Container(
                   height: 5,
                   margin: EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
@@ -548,7 +562,7 @@ class _BitcoinState extends State<Bitcoin> {
                       bottomRight: Radius.circular(15),
                     ),
                   ),
-                ),
+                ),*/
                 SizedBox(height: 30),
               ],
             ),
@@ -558,54 +572,27 @@ class _BitcoinState extends State<Bitcoin> {
       bottomNavigationBar: CurvedNavigationBar(
         key: _globalnavKey,
         height: 50,
+        color: Colors.indigo.shade900,
+        backgroundColor: Colors.white,
         buttonBackgroundColor: Colors.white,
-        items: <Widget>[
-          Icon(Icons.account_balance_outlined, size: 30,color: ambi,),
-          Icon(Icons.money_off_csred_outlined, size: 30),
-          Icon(Icons.info_outline, size: 30),
-          Icon(Icons.swap_horizontal_circle_outlined, size: 30),
-          Icon(Icons.qr_code, size: 30),
+        items:<Widget> [
+          Icon(Icons.account_balance_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.money_off_csred_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.info_outline, size: 25,color: Colors.green,),
+          Icon(Icons.swap_horizontal_circle_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.qr_code, size: 25,color: Colors.green,),
         ],
+        animationCurve: Curves.bounceInOut,
         animationDuration: Duration(
           milliseconds: 300,
         ),
         onTap: (index) {
           setState(() {
             _page = index;
+            debugPrint("current index is{$index}");
           });
         },
       ),
-/*       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            label: 'Dashboard',
-            icon: ImageIcon(
-              AssetImage('assets/images/wallet.png'),
-            ),
-          ),
-          BottomNavigationBarItem(
-              label: 'BTC', icon: Icon(Icons.monetization_on_outlined)),
-          BottomNavigationBarItem(
-            label: 'My Offers',
-            icon: Icon(
-              Icons.new_releases_outlined,
-            ),
-          ),
-          BottomNavigationBarItem(
-              label: 'Swap Money',
-              icon: Icon(Icons.swap_horizontal_circle_outlined)),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.qr_code_outlined), label: 'Trades')
-        ],
-        currentIndex: 0,
-        selectedItemColor: bottomNavActive,
-        unselectedItemColor: bottomNavInActive,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: blueMain,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        onTap: (int) {},
-      ), */
     );
   }
 }

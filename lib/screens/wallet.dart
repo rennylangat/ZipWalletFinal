@@ -428,22 +428,26 @@ class _WalletState extends State<Wallet> {
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        height: 50,
-        backgroundColor: Colors.blue,
         key: _globalKey,
-        items: <Widget>[
-          Icon(Icons.account_balance_outlined, size: 30),
-          Icon(Icons.money_off_csred_outlined, size: 30),
-          Icon(Icons.info_outline, size: 30),
-          Icon(Icons.swap_horizontal_circle_outlined, size: 30),
-          Icon(
-            Icons.qr_code,
-            size: 30,
-          ),
+        height: 50,
+        color: Colors.indigo.shade900,
+        backgroundColor: Colors.white,
+        buttonBackgroundColor: Colors.white,
+        items:<Widget> [
+          Icon(Icons.account_balance_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.money_off_csred_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.info_outline, size: 25,color: Colors.green,),
+          Icon(Icons.swap_horizontal_circle_outlined, size: 25,color: Colors.green,),
+          Icon(Icons.qr_code, size: 25,color: Colors.green,),
         ],
+        animationCurve: Curves.bounceInOut,
+        animationDuration: Duration(
+          milliseconds: 300,
+        ),
         onTap: (index) {
           setState(() {
             _page = index;
+            debugPrint("current index is{$index}");
           });
         },
       ),
