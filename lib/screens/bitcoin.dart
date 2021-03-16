@@ -19,7 +19,7 @@ class _BitcoinState extends State<Bitcoin> {
     return Scaffold(
       backgroundColor: lightBlueStart,
       appBar: AppBar(
-        backgroundColor: blueMain,
+        backgroundColor: Colors.grey,
         elevation: 0,
         leading: Padding(
             padding: const EdgeInsets.all(18.0),
@@ -36,7 +36,7 @@ class _BitcoinState extends State<Bitcoin> {
                 );
               },
             )),
-        title: Text('ZipWallet', style: TextStyle(color: appBarItemsColor)),
+        title: Text('ZipWallet', style: TextStyle(color: Colors.black)),
         actions: <Widget>[
           Container(
             child: Padding(
@@ -75,25 +75,25 @@ class _BitcoinState extends State<Bitcoin> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: blueMain,
+                color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50),
-                  bottomRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
                 ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: 30, right: 30, left: 30),
+                    margin: EdgeInsets.only(top: 20, right: 20, left: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
-                        Radius.circular(15),
+                        Radius.circular(10),
                       ),
                       gradient: LinearGradient(
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        colors: [yellowStart, yellowEnd],
+                        colors: [Colors.green, Colors.greenAccent],
                       ),
                     ),
                     child: Padding(
@@ -123,7 +123,7 @@ class _BitcoinState extends State<Bitcoin> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
-                                '\$32.026',
+                                'Ksh 0.00',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 35,
@@ -132,19 +132,6 @@ class _BitcoinState extends State<Bitcoin> {
                               Transform(
                                 transform: Matrix4.identity()..scale(0.9),
                                 alignment: Alignment.bottomRight,
-                                child: Chip(
-                                  backgroundColor: chipColorGreen,
-                                  labelPadding:
-                                      EdgeInsets.symmetric(horizontal: 12),
-                                  label: Text(
-                                    '+ 3.5%',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
                               ),
                             ],
                           ),
@@ -153,7 +140,7 @@ class _BitcoinState extends State<Bitcoin> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Text(
-                                '0.2432232 BTC',
+                                '0.0 BTC',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -193,14 +180,14 @@ class _BitcoinState extends State<Bitcoin> {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width / 1.3,
+                    width: MediaQuery.of(context).size.width / 1.2,
                     height: 15,
-                    margin: EdgeInsets.only(bottom: 40),
+                    margin: EdgeInsets.only(bottom: 30),
                     decoration: BoxDecoration(
-                      color: yellowSecondContainer,
+                      color: Colors.green,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
                       ),
                     ),
                   )
@@ -222,7 +209,7 @@ class _BitcoinState extends State<Bitcoin> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(
-                          Radius.circular(10),
+                          Radius.circular(5),
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -254,7 +241,7 @@ class _BitcoinState extends State<Bitcoin> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(
-                          Radius.circular(10),
+                          Radius.circular(5),
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -290,7 +277,7 @@ class _BitcoinState extends State<Bitcoin> {
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,
@@ -322,13 +309,7 @@ class _BitcoinState extends State<Bitcoin> {
                 * */
 
 
-
-
-
-
-
-
-                /*GestureDetector(
+                /* GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, 'wallet');
                   },
@@ -340,6 +321,7 @@ class _BitcoinState extends State<Bitcoin> {
                         Radius.circular(15),
                       ),
                     ),
+
                     child: Container(
                       padding: EdgeInsets.all(15),
                       child: Row(

@@ -22,7 +22,7 @@ class Routerz {
         return MaterialPageRoute(builder: (_)=>MyOffers());
       case 'swap':
         return MaterialPageRoute(builder: (_)=>SwapMoney());
-      case 'mytrades':
+      case 'trades':
         return MaterialPageRoute(builder: (_)=>MyTrades());
       case 'offer':
         return MaterialPageRoute(builder: (_)=>MyOffers());

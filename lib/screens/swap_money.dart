@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SwapMoney extends StatefulWidget {
+  static const routeName = '/swap';
   @override
   _SwapMoneyState createState() => _SwapMoneyState();
 }

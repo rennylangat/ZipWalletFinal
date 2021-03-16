@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyOffers extends StatefulWidget {
+  static const routeName = '/offers';
   @override
   _MyOffersState createState() => _MyOffersState();
 }
