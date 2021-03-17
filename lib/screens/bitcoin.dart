@@ -2,7 +2,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:zipwallet/screens/nav_drawer.dart';
 import 'package:zipwallet/shared/app_colors.dart';
 
 class Bitcoin extends StatefulWidget {
@@ -19,12 +18,12 @@ class _BitcoinState extends State<Bitcoin> {
     return Scaffold(
       backgroundColor: lightBlueStart,
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey.shade300,
         elevation: 0,
         leading: Padding(
             padding: const EdgeInsets.all(18.0),
             child: GestureDetector(
-              child: SvgPicture.asset('assets/images/menu.svg'),
+              child: SvgPicture.asset('assets/images/menu.svg',color: Colors.indigo,),
               /* 
               To be Revisited at a later time- Navigation Drawer
                */
@@ -45,7 +44,7 @@ class _BitcoinState extends State<Bitcoin> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
-                    child: SvgPicture.asset('assets/images/bell.svg'),
+                    child: SvgPicture.asset('assets/images/bell.svg',color: Colors.green,),
                   ),
                   Positioned(
                     top: 0,
@@ -111,7 +110,7 @@ class _BitcoinState extends State<Bitcoin> {
                                     color: Colors.white, fontSize: 17),
                               ),
                               Text(
-                                'Ksh',
+                                'USD',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -150,12 +149,12 @@ class _BitcoinState extends State<Bitcoin> {
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  color: walletAddButtomColor,
+                                  color: Colors.orange,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(50),
                                   ),
                                   border: Border.all(
-                                    color: Colors.white,
+                                    color: Colors.grey.shade300,
                                     width: 4,
                                   ),
                                   boxShadow: [
@@ -228,7 +227,7 @@ class _BitcoinState extends State<Bitcoin> {
                             child: Text(
                               'Send',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
+                                  fontSize: 20, fontWeight: FontWeight.w400),
                             ),
                           ),
                         ],
@@ -260,7 +259,7 @@ class _BitcoinState extends State<Bitcoin> {
                             child: Text(
                               'Swap Money',
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
+                                  fontSize: 20, fontWeight: FontWeight.w400),
                             ),
                           ),
                         ],
@@ -308,243 +307,6 @@ class _BitcoinState extends State<Bitcoin> {
                 *
                 * */
 
-
-                /* GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'wallet');
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-
-                    child: Container(
-                      padding: EdgeInsets.all(15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      colors: [
-                                        yellowStartBitcoin,
-                                        yellowEndBitcoin
-                                      ],
-                                      begin: Alignment.bottomLeft,
-                                      end: Alignment.topRight),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(40),
-                                  ),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      blurRadius: 7.0,
-                                      spreadRadius: 1.0,
-                                      offset: Offset(0, 1),
-                                    ),
-                                  ],
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 8, left: 8),
-                                  child: Transform(
-                                    transform: Matrix4.identity()..scale(0.7),
-                                    child: SvgPicture.asset(
-                                        'assets/images/bitcoin-logo.svg'),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'Bitcoin',
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 5),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 2),
-                                    decoration: BoxDecoration(
-                                      color: chipColorGreen,
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(50),
-                                      ),
-                                    ),
-                                    child: Text(
-                                      '+ 3.5%',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                '3.210',
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                '\$ 45.000',
-                                style: TextStyle(
-                                    fontSize: 13, color: Colors.black54),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 80,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                    color: lightGreySecondContainer,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                    ),
-                  ),
-                  child: CustomPaint(
-                    painter: ChartLinePainter(),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                  ),
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [
-                                      purpleStartEthereum,
-                                      purpleEndEthereum
-                                    ],
-                                    begin: Alignment.bottomLeft,
-                                    end: Alignment.topRight),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(40),
-                                ),
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 2,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    blurRadius: 7.0,
-                                    spreadRadius: 1.0,
-                                    offset: Offset(0, 1),
-                                  ),
-                                ],
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 8, left: 8),
-                                child: Transform(
-                                  transform: Matrix4.identity()..scale(0.7),
-                                  child: SvgPicture.asset(
-                                      'assets/images/ethereum-logo.svg'),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'Ethereum',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 5),
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 8, vertical: 2),
-                                  decoration: BoxDecoration(
-                                    color: chipColorRed,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(50),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    '- 1.5%',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 10),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Text(
-                              '2.210',
-                              style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            Text(
-                              '\$ 25.000',
-                              style: TextStyle(
-                                  fontSize: 13, color: Colors.black54),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),*/
-             /*   Container(
-                  height: 5,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                    color: lightGreySecondContainer,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                    ),
-                  ),
-                ),*/
                 SizedBox(height: 30),
               ],
             ),
@@ -555,8 +317,8 @@ class _BitcoinState extends State<Bitcoin> {
         key: _globalnavKey,
         height: 50,
         color: Colors.indigo.shade900,
-        backgroundColor: Colors.white,
-        buttonBackgroundColor: Colors.white,
+        backgroundColor: lightBlueStart,
+        buttonBackgroundColor: Colors.grey.shade300,
         items:<Widget> [
           Icon(Icons.account_balance_outlined, size: 25,color: Colors.green,),
           Icon(Icons.money_off_csred_outlined, size: 25,color: Colors.green,),

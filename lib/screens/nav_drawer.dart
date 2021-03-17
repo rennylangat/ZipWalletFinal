@@ -5,31 +5,18 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text("ZipWallet"),
-              decoration: BoxDecoration(
-                color: blueMain,
-              ),
-            ),
-            ListTile(
-              title: Text('Facebook'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text("Twitter"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )
-          ],
-        ),
+      body: Stack(
+        children: <Widget>[
+          menu(context)
+        ],
       ),
+    );
+  }
+  Widget menu(context){
+    return Column(
+      children: <Widget>[
+        Text("This is a text"),
+      ],
     );
   }
 }
